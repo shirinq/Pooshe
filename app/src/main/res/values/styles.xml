@@ -1,0 +1,17 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="ProgressButton" parent="Widget.AppCompat.Button">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">#fff</item>
+        <item name="android:background">#169BD5</item>
+        <item name="android:radius">150dp</item>
+    </style>
+
+</resources>

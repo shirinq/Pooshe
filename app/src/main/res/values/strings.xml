@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Pooshe</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mobileLabel">شماره موبایل</string>
+    <string name="mobileHint">شماره موبایل خود را وارد کنید</string>
+    <string name="contractLabel">شماره قرارداد</string>
+    <string name="contractHint">شماره قرارداد خود را وارد کنید</string>
+    <string name="login_btn">ورود</string>
+</resources>
