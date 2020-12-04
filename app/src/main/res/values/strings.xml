@@ -7,4 +7,5 @@
     <string name="contractLabel">شماره قرارداد</string>
     <string name="contractHint">شماره قرارداد خود را وارد کنید</string>
     <string name="login_btn">ورود</string>
+    <string name="exit_app">برای خروج دوباره بازگشت را بزنید</string>
 </resources>

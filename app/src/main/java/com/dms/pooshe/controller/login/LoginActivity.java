@@ -1,8 +1,10 @@
-package com.dms.pooshe;
+package com.dms.pooshe.controller.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.dms.pooshe.R;
 
 public class LoginActivity extends AppCompatActivity {
 

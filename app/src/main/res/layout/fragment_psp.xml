@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:viewBindingIgnore="true"
-    android:orientation="vertical"
-    android:background="@color/colorBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controller.login.LoginActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorBackground"
+    tools:context=".controller.main.PSPFragment">
 
     <TextView
-        android:text="سامانه بارگذاری مدارک"
+        android:text="لیست شرکت های پرداخت"
         android:textSize="30sp"
         android:gravity="center"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
         tools:viewBindingIgnore="true"
-        android:textColor="@color/black"
+        android:layout_gravity="top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pspRecycler"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_height="match_parent"/>
+
 
 </LinearLayout>
