@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.main.LoadDocumentFragment">
+    <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        android:id="@+id/btnChooseDoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/ProgressButton"/>
+
+    <ImageView
+        android:id="@+id/imgPreview"
+        android:background="@drawable/border"
+        android:layout_margin="20dp"
+        android:padding="5dp"
+        android:src="@mipmap/ic_launcher_foreground"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"/>
+
+    <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        android:id="@+id/btnConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="تایید و بارگذاری مدرک"
+        android:layout_margin="20dp"/>
+</LinearLayout>

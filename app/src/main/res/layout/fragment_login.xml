@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:gravity="center"
-    android:background="@null"
-    android:orientation="vertical"
-    android:padding="15dp"
-    android:elevation="30dp"
-    app:cardCornerRadius="15dp"
-    tools:context=".controller.login.LoginFragment">
+    android:layout_height="250dp"
+    style="@style/LoginCard"
+    tools:context=".controller.login.LoginFragment"
+    android:layout_margin="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="top"
+        android:orientation="vertical"
+        android:padding="25dp">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/mobile"
@@ -64,4 +68,6 @@
             app:spinning_bar_padding="6dp"
             app:spinning_bar_width="4dp" />
 
-</LinearLayout>
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

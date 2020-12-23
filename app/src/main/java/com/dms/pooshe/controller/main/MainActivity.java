@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements PSPAdapter.Parent
    @Override
    public void onBackPressed() {
 
-      if (doubleBackToExitPressedOnce || getSupportFragmentManager().getBackStackEntryCount() == 1) {
+      if (doubleBackToExitPressedOnce || getSupportFragmentManager().getBackStackEntryCount() >= 1) {
          super.onBackPressed();
          return;
       }

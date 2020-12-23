@@ -5,11 +5,11 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:background="@android:color/white"
     tools:context=".controller.main.MainActivity">
     <TextView
         android:text="سامانه بارگذاری مدارک"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:gravity="center"
         tools:viewBindingIgnore="true"
         android:textColor="@color/black"

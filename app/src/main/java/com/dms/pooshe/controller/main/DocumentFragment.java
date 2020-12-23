@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.dms.pooshe.R;
 import com.dms.pooshe.databinding.FragmentDocumentBinding;
+import com.dms.pooshe.utils.TakePicture;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,5 +63,35 @@ public class DocumentFragment extends Fragment {
       mBinding.exitBtn.setOnClickListener(v -> {
          getActivity().finish();
       });
+      mBinding.identityBtn.setOnClickListener(v -> getActivity().getSupportFragmentManager().beginTransaction()
+      .add(R.id.fragment_container,LoadDocumentFragment.newInstance(mBinding.identityBtn.getText().toString()))
+              .addToBackStack("docloading")
+              .commit()
+      );
+      mBinding.identity2Btn.setOnClickListener(v -> getActivity().getSupportFragmentManager().beginTransaction()
+              .add(R.id.fragment_container,LoadDocumentFragment.newInstance(mBinding.identity2Btn.getText().toString()))
+              .addToBackStack("docloading")
+              .commit()
+      );
+      mBinding.identityPaperBtn.setOnClickListener(v -> getActivity().getSupportFragmentManager().beginTransaction()
+              .add(R.id.fragment_container,LoadDocumentFragment.newInstance(mBinding.identityPaperBtn.getText().toString()))
+              .addToBackStack("docloading")
+              .commit()
+      );
+      mBinding.billBtn.setOnClickListener(v -> getActivity().getSupportFragmentManager().beginTransaction()
+              .add(R.id.fragment_container,LoadDocumentFragment.newInstance(mBinding.billBtn.getText().toString()))
+              .addToBackStack("docloading")
+              .commit()
+      );
+      mBinding.contract.setOnClickListener(v -> getActivity().getSupportFragmentManager().beginTransaction()
+              .add(R.id.fragment_container,LoadDocumentFragment.newInstance(mBinding.contract.getText().toString()))
+              .addToBackStack("docloading")
+              .commit()
+      );
+      mBinding.certificateBtn.setOnClickListener(v -> getActivity().getSupportFragmentManager().beginTransaction()
+              .add(R.id.fragment_container,LoadDocumentFragment.newInstance(mBinding.certificateBtn.getText().toString()))
+              .addToBackStack("docloading")
+              .commit()
+      );
    }
 }

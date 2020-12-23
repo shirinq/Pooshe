@@ -1,22 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:viewBindingIgnore="true"
     android:orientation="vertical"
-    android:background="@color/colorBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     tools:context=".controller.login.LoginActivity">
 
     <TextView
         android:text="سامانه بارگذاری مدارک"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:gravity="center"
         android:layout_marginTop="10dp"
         tools:viewBindingIgnore="true"
-        android:textColor="@color/black"
+        android:textColor="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_width="178dp"
+        android:layout_height="173dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_launcher_foreground" />
+   <!-- <LinearLayout
+        android:id="@+id/llLogin"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/agent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="کاربری"/>
+
+    </LinearLayout>-->
 
     <FrameLayout
         android:id="@+id/fragment_container"
