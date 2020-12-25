@@ -1,12 +1,12 @@
 package com.dms.pooshe.controller.main;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.dms.pooshe.R;
 import com.dms.pooshe.controller.adapter.PSPAdapter;
@@ -14,24 +14,23 @@ import com.dms.pooshe.controller.adapter.PSPAdapter;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class MainActivity extends AppCompatActivity implements PSPAdapter.ParentActivity {
+public class AgentActivity extends AppCompatActivity implements PSPAdapter.ParentActivity, UserRegistrationFragment.FragmentActivity {
 
-   private static final String DOC_FRAGMENT_TAG = "doc_fragment";
    private boolean doubleBackToExitPressedOnce = false;
    private Toast exitToast;
 
    public static Intent newIntent(Context target) {
-      return new Intent(target, MainActivity.class);
+      return new Intent(target, AgentActivity.class);
    }
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_main);
+      setContentView(R.layout.activity_agent);
 
       if (savedInstanceState == null) {
          getSupportFragmentManager().beginTransaction()
-                 .add(R.id.fragment_container, PSPFragment.newInstance(new ArrayList<>(Arrays.asList("سایان", "ایران کیش", "پاسارگاد"))))
+                 .add(R.id.fragment_container, PSPFragment.newInstance(new ArrayList<>(Arrays.asList("سداد","پارسیان","اقتصاد نوین", "ایران کیش", "پاسارگاد"))))
                  .commit();
       }
    }
@@ -39,8 +38,16 @@ public class MainActivity extends AppCompatActivity implements PSPAdapter.Parent
    @Override
    public void onDocument() {
       getSupportFragmentManager().beginTransaction()
+              .add(R.id.fragment_container, UserRegistrationFragment.newInstance())
+              .addToBackStack("UserRegistrationFragment")
+              .commit();
+   }
+
+   @Override
+   public void onDocumentUpload() {
+      getSupportFragmentManager().beginTransaction()
               .add(R.id.fragment_container, DocumentFragment.newInstance())
-              .addToBackStack(DOC_FRAGMENT_TAG)
+              .addToBackStack("DocumentFragment")
               .commit();
    }
 
@@ -57,12 +64,5 @@ public class MainActivity extends AppCompatActivity implements PSPAdapter.Parent
       exitToast.show();
 
       new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
-   }
-
-   @Override
-   protected void onDestroy() {
-      if (exitToast !=null)
-         exitToast.cancel();
-      super.onDestroy();
    }
 }

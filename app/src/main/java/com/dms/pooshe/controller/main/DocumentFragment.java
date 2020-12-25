@@ -1,16 +1,14 @@
 package com.dms.pooshe.controller.main;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.dms.pooshe.R;
+import androidx.fragment.app.Fragment;
+
+import com.dms.pooshe.controller.upload.UploadActivity;
 import com.dms.pooshe.databinding.FragmentDocumentBinding;
-import com.dms.pooshe.utils.TakePicture;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +19,7 @@ public class DocumentFragment extends Fragment {
 
    private FragmentDocumentBinding mBinding;
    private int shortAnimationDuration = 2000;
+
    public DocumentFragment() {
       // Required empty public constructor
    }
@@ -43,7 +42,6 @@ public class DocumentFragment extends Fragment {
    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                             Bundle savedInstanceState) {
       // Inflate the layout for this fragment
-
       mBinding = FragmentDocumentBinding.inflate(inflater, container, false);
       onClick();
       crossFade();
@@ -59,39 +57,16 @@ public class DocumentFragment extends Fragment {
               .setListener(null);
    }
 
-   private void onClick(){
+   private void onClick() {
       mBinding.exitBtn.setOnClickListener(v -> {
          getActivity().finish();
       });
-      mBinding.identityBtn.setOnClickListener(v -> getActivity().getSupportFragmentManager().beginTransaction()
-      .add(R.id.fragment_container,LoadDocumentFragment.newInstance(mBinding.identityBtn.getText().toString()))
-              .addToBackStack("docloading")
-              .commit()
-      );
-      mBinding.identity2Btn.setOnClickListener(v -> getActivity().getSupportFragmentManager().beginTransaction()
-              .add(R.id.fragment_container,LoadDocumentFragment.newInstance(mBinding.identity2Btn.getText().toString()))
-              .addToBackStack("docloading")
-              .commit()
-      );
-      mBinding.identityPaperBtn.setOnClickListener(v -> getActivity().getSupportFragmentManager().beginTransaction()
-              .add(R.id.fragment_container,LoadDocumentFragment.newInstance(mBinding.identityPaperBtn.getText().toString()))
-              .addToBackStack("docloading")
-              .commit()
-      );
-      mBinding.billBtn.setOnClickListener(v -> getActivity().getSupportFragmentManager().beginTransaction()
-              .add(R.id.fragment_container,LoadDocumentFragment.newInstance(mBinding.billBtn.getText().toString()))
-              .addToBackStack("docloading")
-              .commit()
-      );
-      mBinding.contract.setOnClickListener(v -> getActivity().getSupportFragmentManager().beginTransaction()
-              .add(R.id.fragment_container,LoadDocumentFragment.newInstance(mBinding.contract.getText().toString()))
-              .addToBackStack("docloading")
-              .commit()
-      );
-      mBinding.certificateBtn.setOnClickListener(v -> getActivity().getSupportFragmentManager().beginTransaction()
-              .add(R.id.fragment_container,LoadDocumentFragment.newInstance(mBinding.certificateBtn.getText().toString()))
-              .addToBackStack("docloading")
-              .commit()
-      );
+
+      mBinding.identityBtn.setOnClickListener(v -> startActivity(UploadActivity.newIntent(mBinding.identityBtn.getText().toString(), getActivity())));
+      mBinding.identity2Btn.setOnClickListener(v -> startActivity(UploadActivity.newIntent(mBinding.identity2Btn.getText().toString(), getActivity())));
+      mBinding.identityPaperBtn.setOnClickListener(v -> startActivity(UploadActivity.newIntent(mBinding.identityPaperBtn.getText().toString(), getActivity())));
+      mBinding.billBtn.setOnClickListener(v -> startActivity(UploadActivity.newIntent(mBinding.billBtn.getText().toString(), getActivity())));
+      mBinding.leaseBtn.setOnClickListener(v -> startActivity(UploadActivity.newIntent(mBinding.leaseBtn.getText().toString(), getActivity())));
+      mBinding.certificateBtn.setOnClickListener(v -> startActivity(UploadActivity.newIntent(mBinding.certificateBtn.getText().toString(), getActivity())));
    }
 }

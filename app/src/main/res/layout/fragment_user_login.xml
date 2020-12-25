@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="250dp"
     style="@style/LoginCard"
-    tools:context=".controller.login.LoginFragment"
+    tools:context=".controller.login.UserLoginFragment"
     android:layout_margin="8dp">
 
     <LinearLayout

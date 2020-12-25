@@ -5,7 +5,7 @@
     android:background="@android:color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controller.main.LoadDocumentFragment">
+    tools:context=".controller.upload.UploadDocumentFragment">
     <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
         android:id="@+id/btnChooseDoc"
         android:layout_width="match_parent"
@@ -14,12 +14,12 @@
 
     <ImageView
         android:id="@+id/imgPreview"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
         android:background="@drawable/border"
         android:layout_margin="20dp"
         android:padding="5dp"
-        android:src="@mipmap/ic_launcher_foreground"
-        android:layout_width="match_parent"
-        android:layout_height="270dp"/>
+        android:src="@mipmap/ic_launcher_foreground" />
 
     <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
         android:id="@+id/btnConfirm"

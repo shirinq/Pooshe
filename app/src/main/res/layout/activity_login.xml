@@ -22,7 +22,8 @@
         android:layout_height="173dp"
         android:layout_gravity="center"
         android:src="@mipmap/ic_launcher_foreground" />
-   <!-- <LinearLayout
+
+    <LinearLayout
         android:id="@+id/llLogin"
         android:orientation="horizontal"
         android:layout_gravity="center"
@@ -32,16 +33,20 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/agent"
+            style="@style/LoginButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:text="بازار یابی جدید"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/user"
+            style="@style/LoginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="کاربری"/>
+            android:text="بررسی مدارک"/>
 
-    </LinearLayout>-->
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/fragment_container"

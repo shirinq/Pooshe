@@ -9,51 +9,45 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.dms.pooshe.controller.main.AgentActivity;
 import com.dms.pooshe.controller.main.MainActivity;
-import com.dms.pooshe.databinding.FragmentLoginBinding;
+import com.dms.pooshe.databinding.FragmentAgentLoginBinding;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link LoginFragment#newInstance} factory method to
+ * Use the {@link AgentLoginFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class LoginFragment extends Fragment {
+public class AgentLoginFragment extends Fragment {
 
-   private FragmentLoginBinding mBinding;
+   private FragmentAgentLoginBinding mBinding;
 
-   public LoginFragment() {
+   public AgentLoginFragment() {
       // Required empty public constructor
    }
 
-   public static LoginFragment newInstance() {
-      return new LoginFragment();
-   }
-
-   @Override
-   public void onCreate(Bundle savedInstanceState) {
-      super.onCreate(savedInstanceState);
+   public static AgentLoginFragment newInstance() {
+      return new AgentLoginFragment();
    }
 
    @Override
    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                             Bundle savedInstanceState) {
       // Inflate the layout for this fragment
-      mBinding = FragmentLoginBinding.inflate(inflater, container, false);
-      View view = mBinding.getRoot();
+      mBinding = FragmentAgentLoginBinding.inflate(inflater, container, false);
       onClick();
-      return view;
+      return mBinding.getRoot();
    }
 
-   private void onClick(){
+   private void onClick() {
       mBinding.login.setOnClickListener(v -> {
 
          if (mBinding.contractNumber.getEditText().getText().toString().equals("") || mBinding.mobile.getEditText().getText().toString().equals("")) {
             Toast.makeText(getActivity(), "فیلد های بالا نمیتوانند خالی باشند", Toast.LENGTH_LONG).show();
             mBinding.contractNumber.setErrorEnabled(mBinding.contractNumber.getEditText().getText().toString().equals(""));
             mBinding.mobile.setErrorEnabled(mBinding.mobile.getEditText().getText().toString().equals(""));
-         }
-         else {
-            startActivity(MainActivity.newIntent(getActivity()));
+         } else {
+            startActivity(AgentActivity.newIntent(getActivity()));
             getActivity().finish();
          }
       });

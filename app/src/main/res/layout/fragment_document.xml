@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="10dp"
     android:orientation="vertical"
     android:background="@color/colorBackground"
@@ -20,64 +19,105 @@
         android:layout_height="wrap_content"/>
 
     <LinearLayout
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/contract_number"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/pspName"
+            android:text="ایران کیش"
+            android:gravity="right"
             android:layout_weight="1"
-            android:hint="@string/contractLabel"
-            style="@style/TextField">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/contract"
-                android:text="123456"
-                android:textIsSelectable="true"
-                android:inputType="none"
-                android:textColor="@android:color/black"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/psp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="نام شرکت پرداخت:"
+            android:textColor="@color/colorPrimaryDark"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:hint="نام شرکت پرداخت کننده"
-            style="@style/TextField">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:textColor="@android:color/black"
-                android:textIsSelectable="true"
-                android:inputType="none"
-                android:focusable="true"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ایران کیش"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
+            android:gravity="right"
+            android:layout_width="0dp"
+            android:textSize="17dp"
+            android:fontFamily="@font/iran_yekan_black"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/agentName"
+            android:text="نگین تمدن"
+            android:gravity="right"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="نام نماینده:"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:gravity="right"
+            android:textSize="17dp"
+            android:fontFamily="@font/iran_yekan_black"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/type"
+            android:text="09123456789"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="شماره موبایل:"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textSize="17dp"
+            android:gravity="right"
+            android:fontFamily="@font/iran_yekan_black"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/identity"
+            android:text="0013456789"
+            android:gravity="right"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="کد ملی:"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textSize="17dp"
+            android:gravity="right"
+            android:fontFamily="@font/iran_yekan_black"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/colorPrimary"
-        android:layout_marginBottom="10dp"/>
+        android:background="@color/colorPrimary" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
             android:id="@+id/contentView"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -205,7 +245,6 @@
                 android:id="@+id/exit_btn"
                 style="@style/Exit"
                 android:text="خروج"
-                android:layout_gravity="bottom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </LinearLayout>

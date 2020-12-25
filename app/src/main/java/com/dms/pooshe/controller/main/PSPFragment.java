@@ -6,13 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.dms.pooshe.controller.adapter.PSPAdapter;
 import com.dms.pooshe.databinding.FragmentPspBinding;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,19 +21,27 @@ import java.util.Arrays;
  */
 public class PSPFragment extends Fragment {
 
+   public static final String PSP_LIST_ARG = "param1";
    private FragmentPspBinding mBinding;
+   private List<String> mPspList = new ArrayList<>();
 
    public PSPFragment() {
       // Required empty public constructor
    }
 
-   public static PSPFragment newInstance() {
-      return new PSPFragment();
+   public static PSPFragment newInstance(ArrayList<String> pspList) {
+      Bundle bundle = new Bundle();
+      bundle.putStringArrayList(PSP_LIST_ARG, pspList);
+      PSPFragment fragment = new PSPFragment();
+      fragment.setArguments(bundle);
+      return fragment;
    }
 
    @Override
    public void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
+      if (getArguments() != null)
+         mPspList = getArguments().getStringArrayList(PSP_LIST_ARG);
    }
 
    @Override
@@ -42,7 +50,7 @@ public class PSPFragment extends Fragment {
       // Inflate the layout for this fragment
       mBinding = FragmentPspBinding.inflate(inflater, container, false);
       if (getActivity() instanceof PSPAdapter.ParentActivity)
-         mBinding.pspRecycler.setAdapter(new PSPAdapter(Arrays.asList("سایان", "ایران کیش", "پاسارگاد"), (PSPAdapter.ParentActivity) getActivity()));
+         mBinding.pspRecycler.setAdapter(new PSPAdapter(mPspList, (PSPAdapter.ParentActivity) getActivity()));
       return mBinding.getRoot();
    }
 }

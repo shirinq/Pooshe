@@ -1,4 +1,4 @@
-package com.dms.pooshe.controller.main;
+package com.dms.pooshe.controller.upload;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -11,6 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.dms.pooshe.R;
 import com.dms.pooshe.databinding.FragmentLoadDocumentBinding;
 import com.dms.pooshe.utils.TakePicture;
@@ -23,10 +25,10 @@ import static android.app.Activity.RESULT_CANCELED;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link LoadDocumentFragment#newInstance} factory method to
+ * Use the {@link UploadDocumentFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class LoadDocumentFragment extends Fragment {
+public class UploadDocumentFragment extends Fragment {
 
    private static final String ARG_CHOSENDOC = "param1";
    private static final int REQ_TAKE_PICTURE = 0;
@@ -34,12 +36,12 @@ public class LoadDocumentFragment extends Fragment {
    private String mChosenDoc;
    private FragmentLoadDocumentBinding mBinding;
 
-   public LoadDocumentFragment() {
+   public UploadDocumentFragment() {
       // Required empty public constructor
    }
 
-   public static LoadDocumentFragment newInstance(String chosenDoc) {
-      LoadDocumentFragment fragment = new LoadDocumentFragment();
+   public static UploadDocumentFragment newInstance(String chosenDoc) {
+      UploadDocumentFragment fragment = new UploadDocumentFragment();
       Bundle args = new Bundle();
       args.putString(ARG_CHOSENDOC, chosenDoc);
       fragment.setArguments(args);
@@ -69,7 +71,7 @@ public class LoadDocumentFragment extends Fragment {
 
       mBinding.btnConfirm.setOnClickListener(v -> {
          Snackbar.make(mBinding.getRoot(), "عملیات با موفقیت انجام شد", BaseTransientBottomBar.LENGTH_LONG).setAction("تایید", view -> {
-            getActivity().getSupportFragmentManager().popBackStack();
+            getActivity().finish();
          }).show();
       });
    }
@@ -93,6 +95,9 @@ public class LoadDocumentFragment extends Fragment {
          Glide.with(this)
                  .load(selectedImage)
                  .placeholder(R.mipmap.ic_launcher_foreground)
+                 .diskCacheStrategy(DiskCacheStrategy.NONE)
+                 .skipMemoryCache(true)
+                 .apply(new RequestOptions().override(400, 270))
                  .into(mBinding.imgPreview);
 
       }
